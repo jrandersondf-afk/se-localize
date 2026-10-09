@@ -1,4 +1,4 @@
-# Mapa de SP: como é viver no meu bairro?
+# Mapa de SP: se localize! UBS e Ciclovias!
 
 Mapa interativo com dados abertos da cidade de São Paulo (HTML, CSS, JavaScript, Leaflet e proj4).
 
