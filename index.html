@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Se Localize! | Mapa de SP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <aside class="painel">
+    <header>
+      <h1>Se Localize!</h1>
+      <p class="sub">Dados abertos da cidade de São Paulo, no mapa.</p>
+    </header>
+
+    <div>
+      <label for="busca">Buscar por nome, bairro ou rua</label>
+      <input type="search" id="busca" placeholder="Ex.: Mooca, Itaquera, Vila Prudente">
+    </div>
+
+    <div>
+      <label for="esfera">Quem administra</label>
+      <select id="esfera"><option value="">Todas</option></select>
+    </div>
+
+    <section class="stats" aria-live="polite">
+      <div><strong id="stat-ubs">0</strong><span id="stat-legenda">unidades de saúde</span></div>
+    </section>
+
+    <fieldset>
+      <legend>Camadas</legend>
+      <label class="check"><input type="checkbox" id="camada-ubs" checked><i class="dot ubs"></i>UBSs e postos de saúde</label>
+      <label class="check off"><input type="checkbox" disabled><i class="dot ciclo"></i>Ciclovias (em breve)</label>
+    </fieldset>
+
+    <p id="aviso" class="aviso" hidden></p>
+
+    <footer>
+      <button id="tema" type="button">Tema escuro</button>
+      <small>Fonte: GeoSampa, Prefeitura de São Paulo.</small>
+      <small>Criado por: Anderson Júnior.</small>
+    </footer>
+  </aside>
+  <main id="mapa" aria-label="Mapa interativo de São Paulo"></main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.9.2/proj4.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

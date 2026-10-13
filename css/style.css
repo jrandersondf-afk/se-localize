@@ -1,0 +1,39 @@
+:root{
+  --bg:#EEF2F5; --painel:#FFFFFF; --texto:#16222E; --suave:#5B6B7A; --linha:#D5DDE4;
+  --ubs:#00875A; --ciclo:#D6342C; --foco:#1D5FD1;
+}
+[data-theme="dark"]{
+  --bg:#0F1720; --painel:#17212C; --texto:#E8EEF3; --suave:#93A3B2; --linha:#2A3948;
+  --ubs:#2FCB93; --ciclo:#FF6B61; --foco:#7AA8FF;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{display:grid;grid-template-columns:340px 1fr;background:var(--bg);color:var(--texto);font:400 15px/1.5 Inter,system-ui,sans-serif}
+.painel{background:var(--painel);border-right:1px solid var(--linha);padding:24px;display:flex;flex-direction:column;gap:18px;overflow:auto}
+h1{font:700 26px/1.15 "Bricolage Grotesque",Inter,sans-serif;margin:0 0 6px}
+.sub{margin:0;color:var(--suave)}
+label{font-weight:500}
+select{width:100%;margin-top:6px;padding:10px;border:1px solid var(--linha);border-radius:8px;background:var(--bg);color:var(--texto);font:inherit}
+:is(select,button,input):focus-visible{outline:3px solid var(--foco);outline-offset:2px}
+.stats{display:flex;gap:12px}
+.stats div{flex:1;border-left:4px solid var(--ubs);padding-left:12px}
+.stats strong{display:block;font:700 40px/1 "Bricolage Grotesque",Inter,sans-serif}
+.stats span{color:var(--suave)}
+fieldset{border:1px solid var(--linha);border-radius:8px;margin:0;padding:12px 14px}
+legend{padding:0 6px;color:var(--suave)}
+.check{display:flex;align-items:center;gap:10px;padding:5px 0;font-weight:400}
+.check.off{color:var(--suave)}
+.dot{width:12px;height:12px;border-radius:50%;display:inline-block}
+.dot.ubs{background:var(--ubs)} .dot.ciclo{background:var(--ciclo);border-radius:2px;height:5px;width:16px}
+.aviso{margin:0;padding:10px 12px;border-left:4px solid var(--ciclo);background:var(--bg);font-size:14px}
+footer{margin-top:auto;display:flex;flex-direction:column;gap:8px;color:var(--suave)}
+button{padding:9px 12px;border:1px solid var(--linha);border-radius:8px;background:transparent;color:var(--texto);font:inherit;cursor:pointer}
+button:hover{background:var(--bg)}
+#mapa{height:100%;min-height:300px}
+.leaflet-popup-content b{font-family:"Bricolage Grotesque",Inter,sans-serif;font-size:16px}
+@media (max-width:760px){
+  body{grid-template-columns:1fr;grid-template-rows:auto 1fr}
+  .painel{border-right:0;border-bottom:1px solid var(--linha);padding:16px;gap:12px;max-height:46vh}
+  h1{font-size:21px} .stats strong{font-size:30px}
+}
+input[type="search"]{width:100%;margin-top:6px;padding:10px;border:1px solid var(--linha);border-radius:8px;background:var(--bg);color:var(--texto);font:inherit}
